@@ -2,14 +2,17 @@ package one.digitalinnovation.gof.model;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "endereco")
 public class Endereco {
 	
 	@Id
 	@NotNull
 	private String cep;
+	
 	private String logradouro;
 	private String complemento;
 	private String bairro;

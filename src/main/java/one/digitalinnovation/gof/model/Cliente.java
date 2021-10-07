@@ -5,19 +5,24 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
-import javax.validation.constraints.NotBlank;
+import javax.persistence.Table;
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "cliente")
 public class Cliente {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-    @NotBlank(message = "O nome é obrigatório.")
+	@NotNull
 	private String nome;
 
 	@ManyToOne
+	@Valid
+	@NotNull
 	private Endereco endereco;
 
 	public Long getId() {

@@ -39,31 +39,24 @@ public class ClienteRestController {
 	}
 
 	@PostMapping()
-	public ResponseEntity<Cliente> inserir(@RequestBody @Valid Cliente cliente) {
+	public ResponseEntity<Cliente> inserir(@Valid @RequestBody Cliente cliente) {
 		clienteService.inserir(cliente);
 		return ResponseEntity.ok(cliente);
 	}
 
 	@PutMapping("/{id}")
-	public ResponseEntity<Cliente> atualizar(@PathVariable Long id, @RequestBody @Valid Cliente cliente) {
+	public ResponseEntity<Cliente> atualizar(@Valid @RequestBody Cliente cliente, @PathVariable Long id) throws NotFoundException {
 
-		try {
-			clienteService.atualizar(id, cliente);
-			return ResponseEntity.ok(cliente);
-		} catch (NotFoundException e) {
-			return ResponseEntity.notFound().build();
-		}
+		clienteService.atualizar(id, cliente);
+		return ResponseEntity.ok(cliente);
 
 	}
 
 	@DeleteMapping("/{id}")
-	public ResponseEntity<Cliente> deletar(@PathVariable Long id) {
-		try {
-			clienteService.deletar(id);
-			return ResponseEntity.ok().build();
-		} catch (NotFoundException e) {
-			return ResponseEntity.notFound().build();
-		}
+	public ResponseEntity<Cliente> deletar(@PathVariable Long id) throws NotFoundException {
+
+		clienteService.deletar(id);
+		return ResponseEntity.ok().build();
 	}
 
 }
