@@ -12,8 +12,12 @@ Bootcamp - GFT Java & AWS Developer - Digital Innovation One - Laboratório - Ex
 
 ## Endpoints
 
-**GET /clientes** - Lista de todos os clientes
-**GET /clientes/{id}** - Consulta um cliente pelo id
-**POST /clientes** - Cadastro do cliente
-**PUT/clientes/{id}** - Atualiza um cliente
-**DELETE /clientes/{id}** - Deleta o cliente pelo id
+1. **GET /clientes** - Lista de todos os clientes
+
+2. **GET /clientes/{id}** - Consulta um cliente pelo id
+
+3. **POST /clientes** - Cadastro do cliente
+
+4. **PUT/clientes/{id}** - Atualiza um cliente
+
+5. **DELETE /clientes/{id}** - Deleta o cliente pelo id
